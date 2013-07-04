@@ -11,32 +11,42 @@ git clone https://github.com/avidys/setup.git
 ./setup/setup.sh   
 ```
 
-# How to do a central repo
+How to do a central repo
 git --bare init
 git remote add origin <url-of-bare-repo>
 git push --all origin
 
-## how to duplicate
+how to duplicate
 
-# Make a bare clone of the repository
+- Make a bare clone of the repository
+```sh
 git clone --bare https://github.com/exampleuser/old-repository.git
+```
 
-# Mirror-push to the new repository
+Mirror-push to the new repository
+```sh
 cd old-repository.git
 git push --mirror https://github.com/exampleuser/new-repository.git
+```
 
-# Remove our temporary local repository
+Remove our temporary local repository
+```sh
 cd ..
 rm -rf old-repository.git
-#If you want to mirror a repository in another location, including getting updates from the original, you can clone a mirror and periodically push the changes.
+```
 
-# Make a bare mirrored clone of the repository
+If you want to mirror a repository in another location, including getting updates from the original, you can clone a mirror and periodically push the changes.
+
+Make a bare mirrored clone of the repository
+```sh
 git clone --mirror https://github.com/exampleuser/repository-to-mirror.git
+```
 
-# Set the push location to your mirror
+Set the push location to your mirror
+```sh
 cd repository-to-mirror.git
 git remote set-url --push origin https://github.com/exampleuser/mirrored
-
+```
 
 
 See also http://github.com/avidys/dotfiles.
