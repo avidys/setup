@@ -9,8 +9,15 @@ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 
 # Load nvm and install latest production node
 source $HOME/.nvm/nvm.sh
+nvm ls-remote
 nvm install v0.10.12
 nvm use v0.10.12
+nvm ls
+
+
+# nvm run 0.10
+# nvm deactivate
+# nvm alias default 0.10
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
@@ -34,7 +41,7 @@ fi
 if [ -d .emacs.d/ ]; then
     mv .emacs.d .emacs.d~
 fi
-git clone https://github.com/startup-class/dotfiles.git
+git clone https://github.com/avidys/dotfiles.git
 ln -sb dotfiles/.screenrc .
 ln -sb dotfiles/.bash_profile .
 ln -sb dotfiles/.bashrc .
