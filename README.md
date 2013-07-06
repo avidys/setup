@@ -48,12 +48,18 @@ cd repository-to-mirror.git
 git remote set-url --push origin https://github.com/exampleuser/mirrored
 ```
 
+In order to siulateously push to 2 repo
+```sh
+git remote add all github:path/proj.git
+git remote set-url --add --push all url = heroku:path/proj.git
+git push all --all.
+```
+```
+[remote "all"]
+  url = github:path/proj.git
+  url = heroku:path/proj.git
+```
 
 See also http://github.com/avidys/dotfiles.
 
 From [Startup Engineering Video Lectures 4a/4b](https://class.coursera.org/startup-001/lecture/index).
-
-
-
-
-
