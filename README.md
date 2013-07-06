@@ -52,7 +52,9 @@ In order to siulateously push to 2 repo
 ```sh
 git remote add all github:path/proj.git
 git remote set-url --add --push all url = heroku:path/proj.git
-git push all --all.
+git push all --all
+
+git remote | xargs -L 1 git push
 ```
 ```
 [remote "all"]
